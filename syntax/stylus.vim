@@ -4,6 +4,10 @@
 " Filenames: *.styl, *.stylus
 " Based On: Tim Pope (sass.vim)
 
+" Load css syntax
+runtime! syntax/css.vim
+unlet b:current_syntax
+
 syn case ignore
 
 syn cluster stylusCssSelectors contains=cssTagName,cssSelector,cssPseudo
@@ -44,18 +48,20 @@ syn match stylusIdChar     "#[[:alnum:]_-]\@=" nextgroup=stylusId
 
 syn region stylusComment    start="//" end="$" contains=cssTodo,@Spell fold
 
-hi def link stylusComment               Comment
+hi def link stylusComment               cssComment
 hi def link stylusVariable              Identifier
 hi def link stylusControl               PreProc
 hi def link stylusFunction              Function
 hi def link stylusInterpolation         Delimiter
 
 hi def link stylusAmpersand             Character
-hi def link stylusClass                 Type
-hi def link stylusClassChar             Special
+hi def link stylusClass                 cssClassName
+hi def link stylusClassChar             cssClassNameDot
 hi def link stylusEscape                Special
-hi def link stylusId                    Identifier
-hi def link stylusIdChar                Special
+hi def link stylusId                    cssIdentifier
+hi def link stylusIdChar                cssIdentifier
+
+hi def link stylusProperty              cssProperty
 
 let b:current_syntax = "stylus"
 
