@@ -1,3 +1,7 @@
+Fork that doesn't overwrite vim's built-in css syntax/highlighting.
+
+---
+
 # stylus.vim
 Syntax highlighting for [Stylus](http://learnboost.github.com/stylus/).
 
